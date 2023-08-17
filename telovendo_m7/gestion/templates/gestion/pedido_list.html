@@ -1,0 +1,14 @@
+{% extends "sitio_web/base.html" %}
+{% block contenido %}
+    <h1>Lista de Pedidos</h1>
+    <a href="{{ tomar_pedido_url }}" class="btn">Tomar un Pedido</a>
+    
+    <ul>
+        {% for pedido in pedidos %}
+            <li>
+                {{ pedido }}
+                <a href="{% url 'detalle_pedido' pedido.id %}" class="btn">Ver Detalle</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
